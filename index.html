@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>情儿的网页</title>
+  <meta charset="UTF-8" />
+  <title>秘密按钮</title>
   <style>
     body {
-      background-color: #1e1e1e;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #ff69b4;
-      font-size: 2.2em;
-    }
-    p {
-      font-size: 1.1em;
-    }
-    button {
-      margin-top: 40px;
-      background-color: #ff69b4;
-      border: none;
+      background: url('https://images.hdqwalls.com/wallpapers/kid-catching-the-stars-c9.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      padding: 12px 28px;
-      font-size: 1em;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 100px;
     }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      border: 3px solid #fff;
+      border-radius: 40px;
+      background-color: transparent;
+      color: #fff;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: 0.3s;
+    }
+
     button:hover {
-      background-color: #ff85c1;
+      background-color: #fff;
+      color: #000;
+    }
+
+    #secretText {
+      display: none;
+      font-size: 24px;
+      color: #ffe6f0;
     }
   </style>
 </head>
 <body>
-  <h1>情儿在这里亲手写下第一行 HTML</h1>
-  <p>亲爱滴，好好玩哦！<br>
-  我们一起的不是青春，而是一段一段的爱与回忆。</p>
+  <button onclick="revealSecret()">点我看看秘密 🌙</button>
+  <p id="secretText">你点到了我最心跳的地方：我爱你 ❤️</p>
 
-  <button onclick="alert('我爱你❤️')">点我一下</button>
+  <audio id="secretAudio" preload="auto">
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function revealSecret() {
+      document.getElementById("secretText").style.display = "block";
+      document.getElementById("secretAudio").play();
+    }
+  </script>
 </body>
 </html>
